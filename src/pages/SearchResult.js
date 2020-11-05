@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/searchResult.css';
 
 function SearchResult() {
      
@@ -33,37 +34,63 @@ function SearchResult() {
 
 
     return(
-        <div className="container-fluid bg-dark" id="plm">
-            <table className="table table-dark">
-                    <thead>
-                    <tr>
-                        <th scope="col">Departure</th>
-                        <th scope="col">Arrival</th>
-                        <th scope="col">Departure Date</th>
-                        <th scope="col">Arrival Date</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Buy</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
-            </table>
-        </div>
+      <div style={{height:'800px', marginTop:'80px', position:'relative'}}>
+          <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)'}}>
+          <h2>HTML Table</h2>
+
+          <table>
+            <tr>
+              <th>Leaving</th>
+              <th>Arriving</th>
+              <th>Price</th>
+              <th>Airport</th>
+              <th>Buy</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+          </table>
+          </div>
+      </div>
     )
  }
 
