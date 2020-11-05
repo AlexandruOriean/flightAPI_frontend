@@ -35,58 +35,58 @@ function SearchResult() {
 
     return(
       <div style={{height:'800px', marginTop:'80px', position:'relative'}}>
-          <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)'}}>
-          <h2>HTML Table</h2>
+          <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:'900px'}}>
+          <h2>Results:</h2>
 
           <table>
             <tr>
-              <th>Leaving</th>
-              <th>Arriving</th>
+              <th>From</th>
+              <th>To</th>
               <th>Price</th>
-              <th>Airport</th>
+              <th>Date</th>
               <th>Buy</th>
             </tr>
             <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>Berlin</td>
+              <td>Bucharest</td>
+              <td>$350</td>
+              <td>12.11.2020 - 14:00</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
             <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>Bucharest</td>
+              <td>Timisoara</td>
+              <td>$350</td>
+              <td>12.11.2020 - 14:00</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
             <tr>
-              <td>Ernst Handel</td>
-              <td>Roland Mendel</td>
-              <td>Austria</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>Barcelona</td>
+              <td>London</td>
+              <td>$350</td>
+              <td>12.11.2020 - 14:00</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
             <tr>
-              <td>Island Trading</td>
-              <td>Helen Bennett</td>
-              <td>UK</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>Berlin</td>
+              <td>Prague</td>
+              <td>$350</td>
+              <td>12.11.2020 - 14:00</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
             <tr>
-              <td>Laughing Bacchus Winecellars</td>
-              <td>Yoshi Tannamuri</td>
-              <td>Canada</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>Vienna</td>
+              <td>New York</td>
+              <td>$350</td>
+              <td>12.11.2020 - 14:00</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
             <tr>
-              <td>Magazzini Alimentari Riuniti</td>
-              <td>Giovanni Rovelli</td>
-              <td>Italy</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>Shanghai</td>
+              <td>Liverpool</td>
+              <td>$350</td>
+              <td>12.11.2020 - 14:00</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
           </table>
           </div>
