@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../styles/navbar.css'
 
 class Navbar extends React.Component {
@@ -6,8 +6,8 @@ class Navbar extends React.Component {
         return (
             <div>
                 {/* <!-- Navbar --> */}
-                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark static-top">
-                    <div class="container">
+                <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark static-top">
+                    <div className="container">
                             <a className="navbar-brand" href="/" style={{fontSize: '27px'}}>
                                 <img src="img/navbar_icon.png" width={50} height={50} alt="" />logos.ro
                             </a>

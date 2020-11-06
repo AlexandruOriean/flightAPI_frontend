@@ -9,7 +9,6 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderSuccess from './components/OrderSuccess';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Recommendations from './components/Recommendations';
 
 class App extends React.Component {
  render () {

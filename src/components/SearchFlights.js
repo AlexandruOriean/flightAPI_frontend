@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React from 'react';
 import '../styles/searchSection.css'
 
 class SearchFlights extends React.Component {
@@ -6,34 +6,34 @@ class SearchFlights extends React.Component {
         return(
             <div>
                 {/* <!-- Search Flights Section --> */}
-                <section class="page-section bg-dark text-white mb-0" id="search">
-                    <div class="container">
+                <section className="page-section bg-dark text-white mb-0" id="search">
+                    <div className="container">
                         {/* <!-- Search Flights Heading --> */}
-                        <h2 class="page-section-heading text-center text-uppercase text-white mb-5">Search for a flight!</h2>
+                        <h2 className="page-section-heading text-center text-uppercase text-white mb-5">Search for a flight!</h2>
                         {/* <!-- Search Section Content --> */}
-                        <div class="row mb-3">
-                            <div class="col-lg-4 ml-auto text-center">
+                        <div className="row mb-3">
+                            <div className="col-lg-4 ml-auto text-center">
                                 <p>From</p> 
-                                <input class="form-control" type="text" placeholder="Search" aria-label="Search"/>
+                                <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
                             </div>
-                            <div class="col-lg-4 mr-auto text-center">
+                            <div className="col-lg-4 mr-auto text-center">
                                 <p>To</p> 
-                                <input class="form-control" type="text" placeholder="Search" aria-label="Search"/>
+                                <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 ml-auto text-center">
+                        <div className="row">
+                            <div className="col-lg-4 ml-auto text-center">
                                 <p>Departure date</p>
-                                <input class="form-control" type="date" value="2020-10-09" id="example-date-input"/>
+                                <input className="form-control" type="date" defaultValue="zzz" id="example-date-input"/>
                             </div>
-                            <div class="col-lg-4 mr-auto text-center">
+                            <div className="col-lg-4 mr-auto text-center">
                                 <p>Arrival date</p>
-                                <input class="form-control" type="date" value="2020-10-09" id="example-date-input"/>
+                                <input className="form-control" type="date" defaultValue="defaultValue" id="example-date-input"/>
                             </div>
                         </div>
                         {/* <!-- Search button --> */}
-                        <div class="text-center mt-4">
-                            <button type="button" class="btn btn-info">Search</button>
+                        <div className="text-center mt-4">
+                            <button type="button" className="btn btn-info">Search</button>
                         </div>   
                     </div> 
                 </section>
