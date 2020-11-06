@@ -1,4 +1,5 @@
 import React, {component} from 'react';
+import '../styles/searchSection.css'
 
 class SearchFlights extends React.Component {
     render() {

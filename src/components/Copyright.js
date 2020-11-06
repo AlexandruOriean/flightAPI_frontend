@@ -1,4 +1,5 @@
 import React, {component} from 'react';
+import '../styles/copyright.css'
 
 class Copyright extends React.Component {
     render() {

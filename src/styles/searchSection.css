@@ -1,0 +1,17 @@
+.page-section {
+    padding: 6rem 0;
+    background-color: #45A29E;
+  }
+  
+  .page-section .page-section-heading {
+    font-size: 2.25rem;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+  }

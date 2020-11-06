@@ -1,4 +1,5 @@
 import React, {component} from 'react';
+import '../styles/masthead.css'
 
 class Masthead extends React.Component {
     render() {
