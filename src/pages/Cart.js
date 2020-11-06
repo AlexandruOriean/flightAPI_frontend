@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class Home extends React.Component {
+class Cart extends React.Component {
     render() {
         return(
             <div style={{height:'500px', marginTop:'80px', position:'relative'}}>
@@ -13,4 +13,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default Cart;

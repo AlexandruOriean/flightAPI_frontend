@@ -7,6 +7,7 @@ import Copyright from './components/Copyright';
 import SearchResult from './pages/SearchResult';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import OrderSuccess from './components/OrderSuccess';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Recommendations from './components/Recommendations';
 
@@ -24,6 +25,7 @@ class App extends React.Component {
             <Route path='/flights' component={SearchResult}/>
             <Route path='/cart' component={Cart}></Route>
             <Route path='/checkout' component={Checkout}></Route>
+            <Route path='/ordersuccess' component={OrderSuccess}></Route>
           </Switch>
 
         

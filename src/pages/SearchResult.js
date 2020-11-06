@@ -43,51 +43,23 @@ function SearchResult() {
               <th>From</th>
               <th>To</th>
               <th>Price</th>
-              <th>Date</th>
+              <th>Departure Date</th>
+              <th>Departure Time</th>
+              <th>Arrival Time</th>
               <th>Buy</th>
             </tr>
-            <tr>
-              <td>Berlin</td>
-              <td>Bucharest</td>
-              <td>$350</td>
-              <td>12.11.2020 - 14:00</td>
+            {flightDetails.map((flight, index) => (
+              <tr>
+              <td>{flight.departureAirport.city.cityName}</td>
+              <td>{flight.arrivalAirport.city.cityName}</td>
+              <td>{flight.price}</td>
+              <td>{flight.departureDate}</td>
+              <td>{flight.departureTime}</td>
+              <td>{flight.arrivalTime}</td>
               <td><button type="button" class="btn btn-primary">Buy</button></td>
             </tr>
-            <tr>
-              <td>Bucharest</td>
-              <td>Timisoara</td>
-              <td>$350</td>
-              <td>12.11.2020 - 14:00</td>
-              <td><button type="button" class="btn btn-primary">Buy</button></td>
-            </tr>
-            <tr>
-              <td>Barcelona</td>
-              <td>London</td>
-              <td>$350</td>
-              <td>12.11.2020 - 14:00</td>
-              <td><button type="button" class="btn btn-primary">Buy</button></td>
-            </tr>
-            <tr>
-              <td>Berlin</td>
-              <td>Prague</td>
-              <td>$350</td>
-              <td>12.11.2020 - 14:00</td>
-              <td><button type="button" class="btn btn-primary">Buy</button></td>
-            </tr>
-            <tr>
-              <td>Vienna</td>
-              <td>New York</td>
-              <td>$350</td>
-              <td>12.11.2020 - 14:00</td>
-              <td><button type="button" class="btn btn-primary">Buy</button></td>
-            </tr>
-            <tr>
-              <td>Shanghai</td>
-              <td>Liverpool</td>
-              <td>$350</td>
-              <td>12.11.2020 - 14:00</td>
-              <td><button type="button" class="btn btn-primary">Buy</button></td>
-            </tr>
+            ))}
+            
           </table>
           </div>
       </div>
