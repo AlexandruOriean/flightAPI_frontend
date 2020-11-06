@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/searchResult.css';
 
 function SearchResult() {
      
@@ -33,37 +34,35 @@ function SearchResult() {
 
 
     return(
-        <div className="container-fluid bg-dark" id="plm">
-            <table className="table table-dark">
-                    <thead>
-                    <tr>
-                        <th scope="col">Departure</th>
-                        <th scope="col">Arrival</th>
-                        <th scope="col">Departure Date</th>
-                        <th scope="col">Arrival Date</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Buy</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
-            </table>
-        </div>
+      <div style={{height:'800px', marginTop:'80px', position:'relative'}}>
+          <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:'900px'}}>
+          <h2>Results:</h2>
+
+          <table>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Price</th>
+              <th>Departure Date</th>
+              <th>Departure Time</th>
+              <th>Arrival Time</th>
+              <th>Buy</th>
+            </tr>
+            {flightDetails.map((flight, index) => (
+              <tr>
+              <td>{flight.departureAirport.city.cityName}</td>
+              <td>{flight.arrivalAirport.city.cityName}</td>
+              <td>{flight.price}</td>
+              <td>{flight.departureDate}</td>
+              <td>{flight.departureTime}</td>
+              <td>{flight.arrivalTime}</td>
+              <td><button type="button" class="btn btn-primary">Buy</button></td>
+            </tr>
+            ))}
+            
+          </table>
+          </div>
+      </div>
     )
  }
 

@@ -1,0 +1,26 @@
+.masthead {
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+    font-weight: 50px;
+    background-color: #45A29E;
+  }
+  
+  .masthead-heading {
+    font-weight: bolder;
+    font-size: 2.95rem;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .masthead-avatar {
+    width: 15rem;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 0.7s infinite  alternate
+  }
+  @-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+  }
+  @keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+  }
