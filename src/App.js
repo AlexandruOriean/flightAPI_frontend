@@ -9,6 +9,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderSuccess from './components/OrderSuccess';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Register from './components/registration';
 
 class App extends React.Component {
  render () {
@@ -22,9 +23,10 @@ class App extends React.Component {
             <Route exact path='/' component={Home}/>
             <Route path='/flights/:from/:to/:date' component={SearchResult}/>
             <Route path='/flights' component={SearchResult}/>
-            <Route path='/cart' component={Cart}></Route>
-            <Route path='/checkout' component={Checkout}></Route>
-            <Route path='/ordersuccess' component={OrderSuccess}></Route>
+            <Route path='/cart' component={Cart} />
+            <Route path='/checkout' component={Checkout} />
+            <Route path='/ordersuccess' component={OrderSuccess} />
+            <Route path='/register' component={Register} />
           </Switch>
 
         
