@@ -10,6 +10,8 @@ import Checkout from './pages/Checkout';
 import OrderSuccess from './components/OrderSuccess';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Register from './components/registration';
+import Login from './components/Login';
+import Logout from './components/Logout';
 
 class App extends React.Component {
  render () {
@@ -27,6 +29,8 @@ class App extends React.Component {
             <Route path='/checkout' component={Checkout} />
             <Route path='/ordersuccess' component={OrderSuccess} />
             <Route path='/register' component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path ="/logout" component={Logout}/>
           </Switch>
 
         
