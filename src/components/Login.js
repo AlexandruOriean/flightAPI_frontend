@@ -13,9 +13,10 @@ export default function Login() {
 
     const onSubmit = user => {
         axios
-            .post("https://localhost:8080/users/login", user)
+            .post("http://localhost:8080/users/login", user)
             .then((res) => {
                 setLoggedIn(true);
+                console.log(user);
                 window.sessionStorage.setItem("login", user.username);
                 setTimeout(() => {
                     History.push("/");

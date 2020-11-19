@@ -11,7 +11,7 @@ export default function Register() {
 
   const onSubmit = (user) => {
     axios
-      .post("https://localhost:8080/users/register", user)
+      .post("http://localhost:8080/users/register", user)
       .then((res) => {
         if (res.status === 200) {
           setRegistrationMessage(res.data);
