@@ -24,25 +24,9 @@ class SearchFlights extends Component{
     console.log(this.state.departure)
     console.log(this.state.arrival)
     console.log((this.state.date))
-    let url = `http://localhost:8080/api/v1/flights?from=${this.state.departure}&to=${this.state.arrival}&date=${this.state.date}`
-    // window.location.href = "/flights"
+    let url = `http://localhost:3000/flights/${this.state.departure}/${this.state.arrival}/${this.state.date}`
+    window.location.href = url;
     console.log(url);
-    return <SearchResult url={url}/>
-
-
-
-    // axios
-    //   .get(`http://localhost:8080/api/v1/flights?from=${this.state.departure}&to=${arrival}`)
-    //   .then((res) => {
-    //   setTimeout(() => {
-    //   History.push("/");
-    //   }, 200);
-    //   })
-    //   .catch((err) => console.log(err));
-    //   console.log(departure);
-    //   console.log(arrival);
-    //   return <SearchFlights />
-    // };
   }
 
   handleInputChange = (event) => {

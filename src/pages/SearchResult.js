@@ -12,12 +12,14 @@ function SearchResult(props) {
 
   useEffect(() => {
       console.log(window.location.href);
-      // const to = window.location.href.split("/").reverse()[1];
-      // const date = window.location.href.split("/").reverse()[0];
+      const from = window.location.href.split("/").reverse()[2];
+      const to = window.location.href.split("/").reverse()[1];
+      const date = window.location.href.split("/").reverse()[0];
+        
       const config = {
-            method: "get",
-            url: url
-          };
+        method: "get",
+        url: `http://localhost:8080/api/v1/flights/${from}/${to}/${date}`,
+      };
 
       axios(config)
         .then((response) => {
