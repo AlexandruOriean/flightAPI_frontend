@@ -58,7 +58,7 @@ export default function Navbar() {
               {currentUser ? (
                 <div className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <Link className="nav-link">{currentUser}</Link>
+                    <Link className="nav-link" to="">{currentUser}</Link>
                   </li>
                   <li className="nav-item">
                     <a href="/login" className="nav-link" onClick={logOut}>
