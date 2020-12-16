@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/searchResult.css';
 import { useParams } from 'react-router-dom';
+import FlightItem from '../components/FlightItem'
 
 function SearchResult(props) {
 

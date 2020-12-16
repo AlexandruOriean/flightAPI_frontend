@@ -13,6 +13,7 @@ import Register from "./components/Registration";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FlightItem } from './components/FlightItem'
 
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
             <Route path="/logout" component={Logout} />
           </Switch>
 
+          <FlightItem />
           <Footer />
           <Copyright />
         </Router>
