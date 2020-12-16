@@ -16,7 +16,7 @@ function SearchResult(props) {
       // const date = window.location.href.split("/").reverse()[0];
       const config = {
             method: "get",
-            url: url
+            url: "http://localhost:8080/api/v1/flights?from=He&to=Lo&date=2020-11-10"
           };
 
       axios(config)
