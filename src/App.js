@@ -4,9 +4,9 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Copyright from "./components/Copyright";
-import SearchResult from "./pages/SearchResult";
+import SearchResult from "./components/SearchResult";
 import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
+import Checkout from "./components/Checkout";
 import OrderSuccess from "./components/OrderSuccess";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Register from "./components/Registration";
@@ -26,7 +26,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route path="/flights/:from/:to/:date" component={SearchResult} />
             <Route path="/cart" component={Cart} />
-            <Route path="/checkout" component={Checkout} />
+            <Route path="/checkout/:id" component={Checkout} />
             <Route path="/ordersuccess" component={OrderSuccess} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />

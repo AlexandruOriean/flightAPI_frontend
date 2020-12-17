@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/searchResult.css';
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function SearchResult(props) {
 
-// const from = window.location.href.split("/").reverse()[2];
-  const { url } = useParams();
 
   const [flightDetails, setFlightDetails] = useState([]);
+  
 
   useEffect(() => {
-      console.log(window.location.href);
+      
       const from = window.location.href.split("/").reverse()[2];
       const to = window.location.href.split("/").reverse()[1];
       const date = window.location.href.split("/").reverse()[0];
@@ -36,7 +35,7 @@ function SearchResult(props) {
     }
 
 
-
+  console.log(flightDetails);
     return(
       <div style={{height:'800px', marginTop:'80px', position:'relative'}}>
           <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:'900px'}}>
@@ -64,7 +63,13 @@ function SearchResult(props) {
                 <td>{flight.departureDate}</td>
                 <td>{flight.departureTime}</td>
                 <td>{flight.arrivalTime}</td>
-                <td><button type="button" class="btn btn-primary">Buy</button></td>
+                <td>
+                  <Link to={`/checkout/${flight.flight_id}`}>
+                    <button type="button" class="btn btn-primary">
+                        Buy
+                    </button>
+                  </Link>
+                </td>
               </tr>
             ))}
             </tbody>
