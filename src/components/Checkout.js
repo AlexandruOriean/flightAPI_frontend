@@ -14,7 +14,6 @@ export default function Checkout() {
    
     
     const [flightDetails, setFlightDetails] = useState([]);
-    const [checkout,setCheckout] = useState(false)
 
     function sendEmail(e) {
         e.preventDefault();
@@ -137,7 +136,7 @@ export default function Checkout() {
                         </div>
                         <div className="col-md-3 mb-3">
                         <label htmlFor="zip">Zip</label>
-                        <input type="text" className="form-control" id="zip" placeholder required />
+                        <input type="text" className="form-control" id="zip" required />
                         <div className="invalid-feedback">
                             Zip code required.
                         </div>
@@ -153,7 +152,7 @@ export default function Checkout() {
                     <div className="row">
                         <div className="col-md-6 mb-3">
                         <label htmlFor="cc-name">Name on card</label>
-                        <input type="text" className="form-control" id="cc-name" placeholder required />
+                        <input type="text" className="form-control" id="cc-name" required />
                         <small className="text-muted">Full name as displayed on card</small>
                         <div className="invalid-feedback">
                             Name on card is required
@@ -161,7 +160,7 @@ export default function Checkout() {
                         </div>
                         <div className="col-md-6 mb-3">
                         <label htmlFor="cc-number">Credit card number</label>
-                        <input type="text" className="form-control" id="cc-number" placeholder required />
+                        <input type="text" className="form-control" id="cc-number" required />
                         <div className="invalid-feedback">
                             Credit card number is required
                         </div>
@@ -170,14 +169,14 @@ export default function Checkout() {
                     <div className="row">
                         <div className="col-md-3 mb-3">
                         <label htmlFor="cc-expiration">Expiration</label>
-                        <input type="text" className="form-control" id="cc-expiration" placeholder required />
+                        <input type="text" className="form-control" id="cc-expiration" required />
                         <div className="invalid-feedback">
                             Expiration date required
                         </div>
                         </div>
                         <div className="col-md-3 mb-3">
                         <label htmlFor="cc-cvv">CVV</label>
-                        <input type="text" className="form-control" id="cc-cvv" placeholder required />
+                        <input type="text" className="form-control" id="cc-cvv" required />
                         <div className="invalid-feedback">
                             Security code required
                         </div>

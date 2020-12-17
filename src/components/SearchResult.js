@@ -56,7 +56,7 @@ function SearchResult(props) {
             <tbody>
             {flightDetails.map((flight, index) => (
 
-              <tr>
+              <tr key={flight.id}>
                 <td>{flight.departureAirport.city.cityName}</td>
                 <td>{flight.arrivalAirport.city.cityName}</td>
                 <td>{flight.price}</td>
@@ -65,7 +65,7 @@ function SearchResult(props) {
                 <td>{flight.arrivalTime}</td>
                 <td>
                   <Link to={`/checkout/${flight.flight_id}`}>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" className="btn btn-primary">
                         Buy
                     </button>
                   </Link>
@@ -73,8 +73,6 @@ function SearchResult(props) {
               </tr>
             ))}
             </tbody>
-
-            
           </table>
           </div>
       </div>

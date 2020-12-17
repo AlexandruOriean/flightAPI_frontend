@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect, useHistory } from "react-router";
+import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 
 export default function Login() {
-  const { register, errors, handleSubmit } = useForm({});
+  const { register, handleSubmit } = useForm({});
   const History = useHistory(); // return redirect that happens after a few seconds
   const [LoggedIn, setLoggedIn] = useState(false);
 
