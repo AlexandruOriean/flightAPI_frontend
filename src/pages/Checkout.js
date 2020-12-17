@@ -1,44 +1,79 @@
-import React, { Component } from 'react'
-import '../styles/checkout.css'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../styles/checkout.css';
 
 
-export default class Checkout extends Component {
-    render() {
-        return (
+export default function Checkout() {
+    
+    const [flightDetails, setFlightDetails] = useState([]);
+  
+
+  useEffect(() => {
+      console.log(window.location.href);
+    //   const from = window.location.href.split("/").reverse()[2];
+    //   const to = window.location.href.split("/").reverse()[1];
+      const id = window.location.href.split("/").reverse()[0];
+      console.log("ID -> " + id);
+        
+      const config = {
+        method: "get",
+        url: `http://localhost:8080/api/v1/flights/${id}`,
+      };
+
+      axios(config)
+        .then((response) => {
+          console.log(response.data);
+          setFlightDetails(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }, []);
+    
+    if (flightDetails === undefined) {
+      return <h3>Loading...</h3>;
+    }
+    
+    console.log(flightDetails);
+    return (
+        
+            
             <div className="container" style={{marginTop:'100px', marginBottom:'60px'}}>
                 <div className="row">
                 <div className="col-md-4 order-md-2 mb-4">
                     <h4 className="d-flex justify-content-between align-items-center mb-3">
                     <span className="text-muted">Your cart</span>
-                    <span className="badge badge-secondary badge-pill">3</span>
+                    {/* <span className="badge badge-secondary badge-pill">3</span> */}
                     </h4>
-                    <ul className="list-group mb-3">
-                    <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                        <h6 className="my-0">Product name</h6>
-                        <small className="text-muted">Brief description</small>
-                        </div>
-                        <span className="text-muted">$12</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                        <h6 className="my-0">Second product</h6>
-                        <small className="text-muted">Brief description</small>
-                        </div>
-                        <span className="text-muted">$8</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                        <h6 className="my-0">Third item</h6>
-                        <small className="text-muted">Brief description</small>
-                        </div>
-                        <span className="text-muted">$5</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$20</strong>
-                    </li>
-                    </ul>
+                            <ul className="list-group mb-3">
+                                <li className="list-group-item d-flex justify-content-between lh-condensed">
+                                    <div>
+                                <h6 className="my-0">{flightDetails.departureAirport.city.cityName} - {flightDetails.arrivalAirport.city.cityName} </h6>
+                                       
+                                <small className="text-muted">{ flightDetails.departureDate } </small>
+                                    </div>
+                                    <span className="text-muted">$12</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between lh-condensed">
+                                    <div>
+                                        <h6 className="my-0">Second product</h6>
+                                        <small className="text-muted">Brief description</small>
+                                    </div>
+                                    <span className="text-muted">$8</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between lh-condensed">
+                                    <div>
+                                        <h6 className="my-0">Third item</h6>
+                                        <small className="text-muted">Brief description</small>
+                                    </div>
+                                    <span className="text-muted">$5</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between">
+                                    <span>Total (USD)</span>
+                                    <strong>$20</strong>
+                                </li>
+                            </ul>
+                    
                     <form className="card p-2">
                     <div className="input-group">
                         <input type="text" className="form-control" placeholder="Promo code" />
@@ -177,5 +212,4 @@ export default class Checkout extends Component {
                 </div>
             </div>
         )
-    }
 }
