@@ -22,8 +22,8 @@ export default function Navbar() {
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark static-top">
         <div className="container">
           <a className="navbar-brand" href="/" style={{ fontSize: "27px" }}>
-            <img src="img/navbar_icon.png" width={50} height={50} alt="" />
-            logos.ro
+            <p> logos.ro</p>
+
           </a>
           <button
             className="navbar-toggler"
