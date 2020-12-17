@@ -7,6 +7,7 @@ import moment  from 'moment';
 
 import emailjs from 'emailjs-com'
 import Paypal from '../components/Paypal'
+import { Link } from 'react-router-dom';
 
 
 
@@ -184,9 +185,9 @@ export default function Checkout() {
                         </div>
                     </div>
                     <hr className="mb-4" />
-                   
+                    <Link to="/ordersuccess">
                         <button className="btn btn-primary btn-lg btn-block" type="submit" >Complete Order</button>
-                   
+                    </Link>
                     </form>
                 </div>
                 </div>
