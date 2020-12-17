@@ -37,7 +37,7 @@ function SearchResult(props) {
     }
 
 
-
+  console.log(flightDetails);
     return(
       <div style={{height:'800px', marginTop:'80px', position:'relative'}}>
           <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:'900px'}}>

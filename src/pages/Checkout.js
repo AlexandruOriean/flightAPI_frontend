@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../styles/checkout.css';
+import '../styles/checkout.css'; 
+import _ from 'lodash';
 
 
 export default function Checkout() {
@@ -9,11 +10,11 @@ export default function Checkout() {
   
 
   useEffect(() => {
-      console.log(window.location.href);
+    //   console.log(window.location.href);
     //   const from = window.location.href.split("/").reverse()[2];
     //   const to = window.location.href.split("/").reverse()[1];
       const id = window.location.href.split("/").reverse()[0];
-      console.log("ID -> " + id);
+    //   console.log("ID -> " + id);
         
       const config = {
         method: "get",
@@ -22,8 +23,8 @@ export default function Checkout() {
 
       axios(config)
         .then((response) => {
-          console.log(response.data);
-          setFlightDetails(response.data);
+        //   console.log(response.data);
+            setFlightDetails([response.data]);
         })
         .catch((error) => {
           console.log(error);
@@ -31,10 +32,12 @@ export default function Checkout() {
   }, []);
     
     if (flightDetails === undefined) {
-      return <h3>Loading...</h3>;
+        <h4>Loading....</h4>
     }
+
     
-    console.log(flightDetails);
+    
+    console.log(_.toArray(flightDetails));
     return (
         
             
@@ -45,14 +48,18 @@ export default function Checkout() {
                     <span className="text-muted">Your cart</span>
                     {/* <span className="badge badge-secondary badge-pill">3</span> */}
                     </h4>
-                            <ul className="list-group mb-3">
+                    {_.toArray(flightDetails).map((flight, i) => (
+                        //     <li className="travelcompany-input" key={i}>
+                        //         <span className="input-label">Name: { flight.departureAirport.city.cityName }</span>
+                        // </li>
+                        <ul className="list-group mb-3" key={i}>
                                 <li className="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
-                                <h6 className="my-0">{flightDetails.departureAirport.city.cityName} - {flightDetails.arrivalAirport.city.cityName} </h6>
+                                <h6 className="my-0">{flight.departureAirport.city.cityName} - {flight.arrivalAirport.city.cityName} </h6>
                                        
-                                <small className="text-muted">{ flightDetails.departureDate } </small>
+                                <small className="text-muted">{ flight.departureDate } </small>
                                     </div>
-                                    <span className="text-muted">$12</span>
+                                <span className="text-muted">${ flight.price }</span>
                                 </li>
                                 <li className="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
@@ -73,8 +80,8 @@ export default function Checkout() {
                                     <strong>$20</strong>
                                 </li>
                             </ul>
-                    
-                    <form className="card p-2">
+                    ))}
+                     <form className="card p-2">
                     <div className="input-group">
                         <input type="text" className="form-control" placeholder="Promo code" />
                         <div className="input-group-append">
