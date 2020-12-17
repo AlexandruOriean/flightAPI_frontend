@@ -3,11 +3,13 @@ import axios from 'axios';
 import '../styles/checkout.css'; 
 import _ from 'lodash';
 import emailjs from 'emailjs-com'
+import Paypal from '../components/Paypal'
 
 
 export default function Checkout() {
     
     const [flightDetails, setFlightDetails] = useState([]);
+    const [checkout,setCheckout] = useState(false)
 
     function sendEmail(e) {
         e.preventDefault();
@@ -185,11 +187,15 @@ export default function Checkout() {
                         <div className="custom-control custom-radio">
                         <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required />
                         <label className="custom-control-label" htmlFor="debit">Debit card</label>
-                        </div>
-                        <div className="custom-control custom-radio">
-                        <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-                        <label className="custom-control-label" htmlFor="paypal">PayPal</label>
-                        </div>
+                            </div>
+                            {checkout ? (
+                                <Paypal />
+                            ) : (
+                                    
+                                    <button onClick={() => {
+                                        setCheckout(true);
+                                    }}>Checkout</button>
+                                )}
                     </div>
                     <div className="row">
                         <div className="col-md-6 mb-3">
