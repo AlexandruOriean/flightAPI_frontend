@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../styles/navbar.css";
-import Logout from "./Logout";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {

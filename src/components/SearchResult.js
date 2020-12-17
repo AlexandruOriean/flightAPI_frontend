@@ -5,14 +5,12 @@ import { Link } from 'react-router-dom';
 
 function SearchResult(props) {
 
-// const from = window.location.href.split("/").reverse()[2];
-  // const { url } = useParams();
 
   const [flightDetails, setFlightDetails] = useState([]);
   
 
   useEffect(() => {
-      console.log(window.location.href);
+      
       const from = window.location.href.split("/").reverse()[2];
       const to = window.location.href.split("/").reverse()[1];
       const date = window.location.href.split("/").reverse()[0];

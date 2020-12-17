@@ -2,19 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/checkout.css'; 
 import _ from 'lodash';
+import moment  from 'moment';
 
 
 export default function Checkout() {
+   
     
     const [flightDetails, setFlightDetails] = useState([]);
   
 
   useEffect(() => {
-    //   console.log(window.location.href);
-    //   const from = window.location.href.split("/").reverse()[2];
-    //   const to = window.location.href.split("/").reverse()[1];
       const id = window.location.href.split("/").reverse()[0];
-    //   console.log("ID -> " + id);
+    
         
       const config = {
         method: "get",
@@ -23,7 +22,6 @@ export default function Checkout() {
 
       axios(config)
         .then((response) => {
-        //   console.log(response.data);
             setFlightDetails([response.data]);
         })
         .catch((error) => {
@@ -35,75 +33,49 @@ export default function Checkout() {
         <h4>Loading....</h4>
     }
 
-    
-    
-    console.log(_.toArray(flightDetails));
+   
     return (
         
             
-            <div className="container" style={{marginTop:'100px', marginBottom:'60px'}}>
+        <div className="container" style={{ marginTop: '100px', marginBottom: '60px' }}>
+            <form className="needs-validation" noValidate></form>
                 <div className="row">
                 <div className="col-md-4 order-md-2 mb-4">
-                    <h4 className="d-flex justify-content-between align-items-center mb-3">
-                    <span className="text-muted">Your cart</span>
-                    {/* <span className="badge badge-secondary badge-pill">3</span> */}
+                    <h4 className="d-flex justify-content-between align-items-center mb-3"> 
+                    <span className="text-muted">Your Ticket</span>
                     </h4>
                     {_.toArray(flightDetails).map((flight, i) => (
-                        //     <li className="travelcompany-input" key={i}>
-                        //         <span className="input-label">Name: { flight.departureAirport.city.cityName }</span>
-                        // </li>
                         <ul className="list-group mb-3" key={i}>
                                 <li className="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
                                 <h6 className="my-0">{flight.departureAirport.city.cityName} - {flight.arrivalAirport.city.cityName} </h6>
-                                       
-                                <small className="text-muted">{ flight.departureDate } </small>
-                                    </div>
+                                    <small className="text-muted">{moment(flight.departureDate).format("MMM. DD")}, <strong>{flight.departureTime}</strong> - {moment(flight.departureDate).format("MMM. DD")}, <strong>{flight.arrivalTime}</strong> </small>
+                                    <small className="text-muted">Operated by <strong>{ flight.airline.name}</strong></small>   
+                                </div>
                                 <span className="text-muted">${ flight.price }</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <div>
-                                        <h6 className="my-0">Second product</h6>
-                                        <small className="text-muted">Brief description</small>
-                                    </div>
-                                    <span className="text-muted">$8</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <div>
-                                        <h6 className="my-0">Third item</h6>
-                                        <small className="text-muted">Brief description</small>
-                                    </div>
-                                    <span className="text-muted">$5</span>
                                 </li>
                                 <li className="list-group-item d-flex justify-content-between">
                                     <span>Total (USD)</span>
-                                    <strong>$20</strong>
+                                <strong>${ flight.price }</strong>
                                 </li>
                             </ul>
                     ))}
-                     <form className="card p-2">
-                    <div className="input-group">
-                        <input type="text" className="form-control" placeholder="Promo code" />
-                        <div className="input-group-append">
-                        <button type="submit" className="btn btn-secondary">Redeem</button>
-                        </div>
-                    </div>
-                    </form>
+                
                 </div>
                 <div className="col-md-8 order-md-1">
-                    <h4 className="mb-3">Billing address</h4>
-                    <form className="needs-validation" noValidate>
+                    <h4 className="mb-3">Passenger Details</h4>
+                    
                     <div className="row">
                         <div className="col-md-6 mb-3">
                         <label htmlFor="firstName">First name</label>
-                        <input type="text" className="form-control" id="firstName" placeholder defaultValue required />
+                            <input type="text" className="form-control" id="firstName"  placeholder="John" required />
                         <div className="invalid-feedback">
                             Valid first name is required.
                         </div>
                         </div>
                         <div className="col-md-6 mb-3">
                         <label htmlFor="lastName">Last name</label>
-                        <input type="text" className="form-control" id="lastName" placeholder defaultValue required />
+                        <input type="text" className="form-control" id="lastName" placeholder="Doe" required/>
                         <div className="invalid-feedback">
                             Valid last name is required.
                         </div>
@@ -151,15 +123,6 @@ export default function Checkout() {
                             Zip code required.
                         </div>
                         </div>
-                    </div>
-                    <hr className="mb-4" />
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="same-address" />
-                        <label className="custom-control-label" htmlFor="same-address">Shipping address is the same as my billing address</label>
-                    </div>
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="save-info" />
-                        <label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
                     </div>
                     <hr className="mb-4" />
                     <h4 className="mb-3">Payment</h4>
@@ -214,7 +177,7 @@ export default function Checkout() {
                     <form action="/ordersuccess">
                         <button className="btn btn-primary btn-lg btn-block" type="submit" >Buy Now!</button>
                     </form>
-                    </form>
+                    {/* </form> */}
                 </div>
                 </div>
             </div>

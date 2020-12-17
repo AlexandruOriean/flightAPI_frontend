@@ -1,8 +1,6 @@
-import React, {useState, useEffect, Component} from "react";
+import React, {Component} from "react";
 import "../styles/searchSection.css";
-import { useForm } from "react-hook-form";
-import SearchResult from '../pages/SearchResult'
-import { Redirect } from 'react-router-dom';
+
 
 class SearchFlights extends Component{
 
@@ -16,8 +14,7 @@ class SearchFlights extends Component{
     }
   }
 
-  // const [data, setData] = useState();
-  // const { errors, handleSubmit } = useForm({});
+
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -36,11 +33,10 @@ class SearchFlights extends Component{
     })
   }
     
-  // const onSubmit = (flights) => {
-  //   //
+
 
   render () {
-    const {departure, arrival, date} = this.state
+    
     return (
       <div>
         {/* <!-- Search Flights Section --> */}
@@ -54,7 +50,7 @@ class SearchFlights extends Component{
             <div className="row mb-3">
               <div className="col-lg-4 ml-auto text-center">
                 <p>From</p>
-                <p>{departure}</p>
+                
                 <input
                   className="form-control"
                   type="text"
@@ -66,7 +62,7 @@ class SearchFlights extends Component{
               </div>
               <div className="col-lg-4 mr-auto text-center">
                 <p>To</p>
-                <p>{arrival}</p>
+                
                 <input
                   className="form-control"
                   type="text"
@@ -78,9 +74,8 @@ class SearchFlights extends Component{
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-4 ml-auto text-center">
+              <div className="col-lg-4 ml-auto mr-auto text-center">
                 <p>Departure date</p>
-                <p>{date}</p>
                 <input
                   className="form-control"
                   type="date"
@@ -89,7 +84,7 @@ class SearchFlights extends Component{
                   onChange={this.handleInputChange}
                 />
               </div>
-              <div className="col-lg-4 mr-auto text-center">
+              {/* <div className="col-lg-4 mr-auto text-center">
                 <p>Arrival date</p>
                 <input
                   className="form-control"
@@ -97,7 +92,7 @@ class SearchFlights extends Component{
                   defaultValue="defaultValue"
                   id="example-date-input"
                 />
-              </div>
+              </div> */}
             </div>
             {/* <!-- Search button --> */}
             <div className="text-center mt-4">
