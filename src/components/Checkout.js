@@ -147,22 +147,9 @@ export default function Checkout() {
                     <h4 className="mb-3">Payment</h4>
                     <div className="d-block my-3">
                         <div className="custom-control custom-radio">
-                        <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" defaultChecked required />
-                        <label className="custom-control-label" htmlFor="credit">Credit card</label>
-                        </div>
-                        <div className="custom-control custom-radio">
-                        <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required />
-                        <label className="custom-control-label" htmlFor="debit">Debit card</label>
                             </div>
-                            {checkout ? (
                                 <Paypal />
-                            ) : (
-                                    
-                                    <button onClick={() => {
-                                        setCheckout(true);
-                                    }}>Checkout</button>
-                                )}
-                    </div>
+                            </div>
                     <div className="row">
                         <div className="col-md-6 mb-3">
                         <label htmlFor="cc-name">Name on card</label>
@@ -198,7 +185,7 @@ export default function Checkout() {
                     </div>
                     <hr className="mb-4" />
                    
-                        <button className="btn btn-primary btn-lg btn-block" type="submit" >Buy Now!</button>
+                        <button className="btn btn-primary btn-lg btn-block" type="submit" >Complete Order</button>
                    
                     </form>
                 </div>
