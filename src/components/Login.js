@@ -39,13 +39,16 @@ export default function Login() {
       className="col-sm-2 col-form-label"
       style={{ marginTop: "250px", marginBottom: "175px" }}
     >
+      
       <Form onSubmit={(e) => e.preventDefault}>
+        <h3 style={{textAlign:"center", marginBottom:"25px", textDecoration: 'underline'}}>Login</h3>
         <Form.Group controlId="formBasicUsername">
-          <Form.Label>Username: </Form.Label>
+          <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
             name="username"
-            placeholder="Enter your username"
+            // placeholder="Enter your username"
+            style={{ textAlign: "center"}}
             ref={register({ required: true })}
           />
         </Form.Group>
@@ -54,19 +57,21 @@ export default function Login() {
           <Form.Control
             type="password"
             name="password"
-            placeholder="Enter your password"
+            style={{textAlign:"center"}}
+            // placeholder="Enter your password"
             ref={register({ required: true })}
           />
         </Form.Group>
         <Button
-          variant="primary"
+          variant="outline-dark"
           type="submit"
           className="submit-register"
+          style={{marginLeft:"68px"}}
           onClick={handleSubmit(onSubmit)}
         >
           Submit
         </Button>
-      </Form>
+        </Form>
     </Container>
   );
 }

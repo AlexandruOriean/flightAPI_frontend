@@ -42,22 +42,26 @@ export default function Register() {
       style={{ marginTop: "100px", marginBottom: "50px" }}
     >
       <Form onSubmit={(e) => e.preventDefault}>
+        <h3 style={{ textAlign: "center", marginBottom: "25px", textDecoration: 'underline' }}>Register</h3>
+        {/* <hr>
+        
+        </hr> */}
         <Form.Group controlId="formBasicName">
-          <Form.Label className="col-sm-2 col-form-label">Name: </Form.Label>
+          <Form.Label >Name </Form.Label>
           <Form.Control
             type="text"
             name="name"
-            placeholder="Enter your name"
+            // placeholder="Enter your "
             ref={register({ required: true })}
           />
         </Form.Group>
 
         <Form.Group controlId="formBasicUsername">
-          <Form.Label>Username: </Form.Label>
+          <Form.Label>Username </Form.Label>
           <Form.Control
             type="text"
             name="username"
-            placeholder="Enter your username"
+            // placeholder="Enter your username"
             ref={register({ required: true })}
           />
         </Form.Group>
@@ -67,7 +71,7 @@ export default function Register() {
           <Form.Control
             type="email"
             name="email"
-            placeholder="Enter email"
+            // placeholder="Enter email"
             ref={register({ required: true })}
           />
         </Form.Group>
@@ -77,7 +81,7 @@ export default function Register() {
           <Form.Control
             type="password"
             name="password"
-            placeholder="Enter your password"
+            // placeholder="Enter your password"
             ref={register({ required: true })}
           />
         </Form.Group>
@@ -87,7 +91,7 @@ export default function Register() {
           <Form.Control
             type="password"
             name="confirmPassword"
-            placeholder="Confirm your password"
+            // placeholder="Confirm your password"
             ref={register({
               required: true,
               validate: (value) =>
@@ -97,9 +101,10 @@ export default function Register() {
         </Form.Group>
         <Link to={"/login"}>
           <Button
-            variant="primary"
+            variant="outline-dark"
             type="submit"
             className="submit-register"
+            style={{marginLeft:"67px"}}
             onClick={handleSubmit(onSubmit)}
             
           >

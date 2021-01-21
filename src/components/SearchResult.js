@@ -39,7 +39,7 @@ function SearchResult(props) {
     return(
       <div style={{height:'800px', marginTop:'80px', position:'relative'}}>
           <div className="text-black" style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:'900px'}}>
-          <h2>Results:</h2>
+          <h2>Results</h2>
 
           <table>
             <thead>
@@ -50,7 +50,7 @@ function SearchResult(props) {
               <th>Departure Date</th>
               <th>Departure Time</th>
               <th>Arrival Time</th>
-              <th>Buy</th>
+              <th></th>
             </tr>
             </thead>
             <tbody>
@@ -65,7 +65,7 @@ function SearchResult(props) {
                 <td>{flight.arrivalTime}</td>
                 <td>
                   <Link to={`/checkout/${flight.flight_id}`}>
-                    <button type="button" className="btn btn-primary">
+                    <button type="button" className="btn btn-outline-dark">
                         Buy
                     </button>
                   </Link>

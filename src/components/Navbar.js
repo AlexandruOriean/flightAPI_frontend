@@ -62,7 +62,7 @@ export default function Navbar() {
                       LogOut
                     </a>
                   </li>
-                    <li className="nav-item" className="nav-link" style={{textDecoration:'none'}}>
+                    <li className="nav-item" className="nav-link" style={{color:'white'}}>
                     Hello,{currentUser}
                   </li>
                 </div>
