@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/checkout.css'; 
 import _ from 'lodash';
-
 import moment  from 'moment';
-
 import emailjs from 'emailjs-com'
 import Paypal from '../components/Paypal'
+import {Link } from 'react-router-dom'
 
 
 
@@ -149,42 +148,12 @@ export default function Checkout() {
                             </div>
                                 <Paypal />
                             </div>
-                    <div className="row">
-                        <div className="col-md-6 mb-3">
-                        <label htmlFor="cc-name">Name on card</label>
-                        <input type="text" className="form-control" id="cc-name" required />
-                        <small className="text-muted">Full name as displayed on card</small>
-                        <div className="invalid-feedback">
-                            Name on card is required
-                        </div>
-                        </div>
-                        <div className="col-md-6 mb-3">
-                        <label htmlFor="cc-number">Credit card number</label>
-                        <input type="text" className="form-control" id="cc-number" required />
-                        <div className="invalid-feedback">
-                            Credit card number is required
-                        </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-3 mb-3">
-                        <label htmlFor="cc-expiration">Expiration</label>
-                        <input type="text" className="form-control" id="cc-expiration" required />
-                        <div className="invalid-feedback">
-                            Expiration date required
-                        </div>
-                        </div>
-                        <div className="col-md-3 mb-3">
-                        <label htmlFor="cc-cvv">CVV</label>
-                        <input type="text" className="form-control" id="cc-cvv" required />
-                        <div className="invalid-feedback">
-                            Security code required
-                        </div>
-                        </div>
-                    </div>
-                    <hr className="mb-4" />
                    
+                    <hr className="mb-4" />
+                        
+                        
                         <button className="btn btn-primary btn-lg btn-block" type="submit" >Complete Order</button>
+                        
                    
                     </form>
                 </div>

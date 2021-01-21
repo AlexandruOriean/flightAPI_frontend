@@ -50,19 +50,20 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/#about">
-                  about
+                  About
                 </a>
               </li>
 
               {currentUser ? (
                 <div className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <Link className="nav-link" to="">{currentUser}</Link>
-                  </li>
+                
                   <li className="nav-item">
                     <a href="/login" className="nav-link" onClick={logOut}>
                       LogOut
                     </a>
+                  </li>
+                    <li className="nav-item" className="nav-link" style={{textDecoration:'none'}}>
+                    Hello,{currentUser}
                   </li>
                 </div>
               ) : (
